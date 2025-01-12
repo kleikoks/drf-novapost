@@ -5,10 +5,10 @@ from ..models import Settlement, Warehouse
 class SettlementSerializer(ModelSerializer):
     class Meta:
         model = Settlement
-        fields = ["id", "title"]
+        fields = ["ref", "title"]
 
 
 class WarehouseSerializer(ModelSerializer):
     class Meta:
         model = Warehouse
-        fields = ["id", "title", "short_address"]
+        fields = ["ref", "title", "short_address"]

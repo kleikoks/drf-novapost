@@ -10,7 +10,7 @@ api_key = getattr(settings, "NP_API_KEY", None)
 def get_full_response(model: str, method: str, properties: dict = None) -> dict[str, list]:
     result = {"data": []}
     properties = properties or {}
-    properties["Limit"] = 3000
+    properties["Limit"] = 99999
 
     data = {
         "apiKey": api_key,
@@ -21,6 +21,7 @@ def get_full_response(model: str, method: str, properties: dict = None) -> dict[
     data["methodProperties"]["Page"] = 1
     while True:
         response = requests.post(url, json=data).json()
+        print(len(response["data"]))
 
         if not response["data"]:
             break

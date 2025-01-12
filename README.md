@@ -1,3 +1,5 @@
+Ripped from some project to be pasted in in some project.
+
 settings.py file:
 ```
 NP_API_KEY=YOUR_API_KEY
